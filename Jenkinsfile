@@ -7,10 +7,10 @@ node {
 
     stage('Build image') {
         sh 'docker version'
-        sh 'docker build -t dotnetapp-dev .'
+        sh 'sudo docker build -t dotnetapp-dev .'
     }
 
     stage('Run image') {
-        sh 'docker run --rm dotnetapp-dev'
+        sh 'sudo docker run --rm dotnetapp-dev'
     }
 }
