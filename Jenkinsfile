@@ -6,6 +6,8 @@ node {
     }
 
     stage('Build image') {
+        sh 'sudo service docker stop'
+        sh 'sudo service docker start'
         sh 'docker version'
         sh 'sudo docker build -t dotnetapp-dev .'
     }
