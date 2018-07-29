@@ -6,10 +6,11 @@ node {
     }
 
     stage('Build image') {
-        sh 'docker build -t dotnetapp-dev'
+        sh 'docker version'
+        sh 'docker build -t dotnetapp-dev .'
     }
 
     stage('Run image') {
-        app = docker.run("dotnetapp-dev")
+        sh 'docker run --rm dotnetapp-dev'
     }
 }
