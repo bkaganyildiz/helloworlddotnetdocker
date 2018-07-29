@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("dotnetapp-dev")
+        sh 'docker build -t dotnetapp-dev'
     }
 
     stage('Run image') {
